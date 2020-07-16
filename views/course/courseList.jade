@@ -1,0 +1,24 @@
+extends ../layout
+block content
+  h1= title
+  table
+    tr
+        th Course id
+        th Course name
+        th Start
+        th End
+        th Prerequisites
+        th
+
+    each course in List
+      tr
+        td= course.courseId
+        td= course.name
+        td= course.startBrief
+        td= course.endBrief
+        td= course.prerequisites
+        td(id='td')
+          form(action=course.url+'/update', class='listFrom')
+            button(id='update') &#9998;Update
+          form(method='POST', action=course.url+'/delete', class='listFrom')
+            button(id='delete') &#10008;Delete

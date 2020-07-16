@@ -1,0 +1,22 @@
+extends ../layout
+block script
+        script(src="/javascripts/courseValidate.js" defer)
+        link(rel='stylesheet', href='/stylesheets/courseValidate.css')
+block content
+        h1= title
+        form(method='POST', action=course.url+'/update')
+                label(for="id") Course id:
+                input(type="text", name="id", value=course.courseId)
+                br
+                label(for="name") Name:
+                input(type="text", name="name", value=course.name)
+                br
+                label(for="pre") Prerequisites:
+                input(type="text", name="pre", value=course.prerequisites)
+                br
+                label(for="start") Start in:
+                input(type="date", name="start", value=course.startBrief)
+                label(for="end") End in:
+                input(type="date", name="end", value=course.endBrief)
+                br
+                button(id='submit', class='button', type='submit')= title

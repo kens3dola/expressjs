@@ -1,0 +1,25 @@
+extends ../layout
+block content
+  h1= title
+  p= notify
+  div(class='table')
+    table
+      tr
+        th Student id
+        th First name
+        th Last name
+        th Address
+        th Date of birth
+        th 
+      each student in studentList
+          tr
+            td= student.studentId
+            td= student.firstName
+            td= student.lastName
+            td= student.address
+            td= student.dob
+            td(id='td')
+              form(action=student.url+'/update', class='listFrom')
+                button(id='update') &#9998;Update
+              form(method='POST', action=student.url+'/delete', class='listFrom')
+                button(id='delete') &#10008;Delete

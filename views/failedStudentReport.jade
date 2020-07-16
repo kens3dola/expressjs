@@ -1,0 +1,37 @@
+extends layout
+block script
+  script(src="/javascripts/script.js" defer)
+block content
+  div(id='reportOfFailure')
+    h1 View failed students
+    p(style="color:red")
+    form(method='POST', action = '/enrolments/failedstudentreport')
+      label
+      label(id='faillabel', for='courseId', style='display:inline') Enter course ID:
+      input(style='width:50%',id='fail', type='text', name='courseId', placeHolder='Course ID')
+      br
+      label(style='display: inline') Or choose one:
+      select(class='selectContent', name="courseIdRp")
+        option
+        each course in courseList
+          option(value=course.courseId)= course.courseId
+      br
+      button(class='rp-button',frommethod='POST') Submit
+  p(style='color:red')= title
+  if error
+    p(style="color: red") nothing found
+  else if list
+    table
+      tr
+          th Student ID
+          th First name
+          th Last name
+          th Address
+          th Date of birth
+      each object in list
+        tr
+          td= object.student.studentId
+          td= object.student.firstName
+          td= object.student.lastName
+          td= object.student.address
+          td= object.student.dob

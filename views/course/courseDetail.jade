@@ -1,0 +1,9 @@
+extends ../layout
+block content
+        h2= title
+        ul Name: #{course.name}
+                li Sourse id: #{course.courseId}
+                li Prerequisites: #{course.prerequisites}
+                li Start: #{course.startBrief}
+                li End: #{course.endBrief}   
+        block delete

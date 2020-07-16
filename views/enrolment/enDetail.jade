@@ -1,0 +1,9 @@
+extends ../layout
+block content
+        h2= title
+        ul 
+                li Student id: #{enrolment.student.studentId}
+                li Course id: #{enrolment.course.courseId}
+                li Semester: #{enrolment.semester}
+                li Grade: #{enrolment.grade}
+        block delete

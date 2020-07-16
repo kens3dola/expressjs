@@ -1,0 +1,38 @@
+extends layout
+block script
+  script(src="/javascripts/script.js" defer)
+block content
+  div(id='studentReport')
+    h1 View student's courses
+    p(style="color:red")
+    form(method='POST', action = '/enrolments/studentreport')
+      label
+      label(style='display: inline', for='studentIdRp') Enter student ID:
+      input(style='width:50%',type='number', name='studentIdRp', placeHolder='Student ID')
+      br
+      label(style='display: inline') Or choose one:
+      select(class='selectContent', name="studentIdRp")
+        option
+        each student in studentList
+          option(value=student.studentId)= student.studentId+' '+student.firstName+" "+ student.lastName
+      br
+      span
+      button(class='rp-button', id='a1',frommethod='POST') Submit
+  p(style='color:red')= title
+  if error
+    p(style="color: red") Nothing found!
+  else if list
+    table
+      tr
+          th Course ID
+          th Name
+          th Start
+          th End
+          th Prerequisites
+      each object in list
+        tr
+          td= object.course.courseId
+          td= object.course.name
+          td= object.course.startBrief
+          td= object.course.endBrief
+          td= object.course.prerequisites

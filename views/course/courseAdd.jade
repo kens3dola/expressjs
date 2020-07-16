@@ -1,0 +1,24 @@
+extends ../layout 
+block script
+        script(src="/javascripts/courseValidate.js" defer)
+        link(rel='stylesheet', href='/stylesheets/courseValidate.css')
+block content
+        h1=title
+        p(class='err')=err
+        form(method='POST', action='create')
+                label(for="id") Course id:
+                input(type="text", class='id', name="id")
+                br
+                label(for="name") Name:
+                input(type="text", name="name")
+                br
+                label(for="pre") Prerequisites(id):
+                input(type="text", class='id', name="pre")
+                br
+                label(for="start") Start in:
+                input(type="date", name="start")
+                br
+                label(for="end") End in:
+                input(type="date", name="end")
+                br
+                button(id='submit', class='button', type='submit') Create course

@@ -1,0 +1,35 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    block script
+  body
+    div(class='container-fluid')
+      div(class='block1')
+        ul(class='nav-bar')
+          li 
+            a(href='/', style='font-weight:400 ') Home
+          li(class='dropdown')
+            span(class='dropbtn') Lists
+            div(class='dropdown-content')
+              a(href='/students/list') Students
+              a(href='/courses/list') Courses
+              a(href='/enrolments/list') Enrolments
+          li(class='dropdown')
+            span(class='dropbtn') Add
+            div(class='dropdown-content')
+              a(href='/students/create') New student
+              a(href='/courses/create') New course
+              a(href='/enrolments/create') New enrolment
+          li(class='dropdown')
+            span(class='dropbtn') Reports
+            div(class='dropdown-content')
+              a(href='/enrolments/studentreport') Student report
+              a(href='/enrolments/coursereport') Course report
+              a(href='/enrolments/failedstudentreport') Failed students              
+      div(class='block2')
+        div(id='content')
+          block content

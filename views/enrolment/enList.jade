@@ -1,0 +1,24 @@
+extends ../layout
+block content
+  h1= title
+  table
+    tr
+        th Student
+        th Course
+        th Semester
+        th Grade
+        th
+
+    each enrolment in List
+      tr
+        td= enrolment.student.studentId
+        td= enrolment.course.courseId
+        td= enrolment.semester
+        td= enrolment.grade
+        td
+          form(action=enrolment.url+'/update')
+            button(id='update') &#9998;Update mark
+          form(method='POST', action=enrolment.url+'/delete')
+            button(id='delete') &#10008;Delete
+  form(action='/enrolments/sortedlist')
+    button(class='sort button') Sort by grade!

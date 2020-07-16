@@ -1,0 +1,24 @@
+extends ../layout 
+block script
+        script(src="/javascripts/studentValidate.js" defer)
+        link(rel='stylesheet', href='/stylesheets/studentValidate.css')
+block content
+        h1=title
+        p(class='err')=err
+        form(method='POST', action='create')
+                label(for="studentId") Student id:
+                input(type="number", name="studentId", required)
+                br
+                label(for="fname") First name:
+                input(class="textInput", type="text", name="fname", required)
+                br
+                label(for="lname") Last name:
+                input(class="textInput",type="text", name="lname", required)
+                br
+                label(for="addres") Address:
+                input(class="textInput",type="text", name="address", required)
+                br
+                label(for="dob") Date of birth:
+                input(type="date", name="dob", required)
+                button(id='create', class='button', type='submit') Create student
+                

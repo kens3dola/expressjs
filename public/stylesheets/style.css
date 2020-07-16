@@ -1,0 +1,202 @@
+*{
+  box-sizing: border-box;
+  font-family: Lucida Console;
+}
+.error::after{
+  content: 'Empty value';
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+}
+.studenterror::after{
+  content: 'Must contain 10 digits';
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+}
+.courseerror::after{
+  content: 'must have length of 3';
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+}
+#a1, #a2, #a3{
+  cursor: pointer;
+}
+.hidden{
+  display: none;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+.block1{
+  min-height: 2em;
+  background-color:#333;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: sticky;
+  top:0;
+}
+.block1 ul{
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.block1 ul > li{
+  width: 15%;
+  padding: 8px 10px;
+  height: 2em;
+  text-align: center;
+}
+.dropdown span, .nav-bar li > a{
+  display: block;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.dropdown:hover, .nav-bar li:hover{
+  background-color: darkgrey;
+}
+.dropdown{
+  position: relative;
+}
+.dropdown-content{
+  display:none;
+  position: absolute;
+  top: 2em;
+  background-color: #f9f9f9;
+  width: 100%;
+  transform:  translateX(-10px);
+  box-shadow: 0px 0px 10px 1px;
+  z-index: -1;
+  padding: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.dropdown-content a{
+  color: #333;
+  display: block;
+  text-decoration: none;
+  width: 100%;
+}
+.dropdown-content a:nth-child(2){
+  margin: 5px 0;
+}
+.dropdown-content a:hover{
+  background-color: darkgrey;
+}
+.dropdown:hover .dropdown-content{
+  display: block;
+  transition: all 20s ease-in-out;
+  height: auto;
+}
+
+.block2{
+  width: 100%;
+  margin: auto;
+}
+#content{
+  width: 800px;
+  margin: 20px auto;
+  box-shadow: 0px 0px 5px 1px;
+  padding: 1em 2em 2em 2em;
+  border-radius: 5px;
+  overflow: auto;
+  min-height: 23em;
+}
+#content h1{
+  margin: 10px auto;
+  text-align: center;
+  font-family: Lucida Console;
+}
+table{
+  margin: auto;
+  width: 100%;
+}
+table, th, td{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td{
+  width: 16.66666666%;
+}
+th{
+  padding: 5px;
+  color: white;
+  background-color: #333;
+  font-weight: 400;
+}
+td{
+  text-align: center;
+}
+tr:nth-child(odd){
+  background-color: rgb(216, 216, 216);
+}
+table button{
+  background: none;
+  border: none;
+  width: 100%;
+}
+table button:hover{
+  background-color: darkgrey;
+}
+.sort{
+  cursor: pointer;
+  background: none;
+  background-color: #333;
+  color: white;
+  border: none;
+  width: 20%;
+  padding: 5px;
+  box-sizing: border-box;
+  float: right;
+}
+form{
+  margin: auto;
+}
+label{
+  display: block;
+  width: 50%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+input, select{
+  width: 100%;
+  margin: 5px 0;
+  border: none;
+  border-bottom: 1px solid black;
+  text-indent: 20px;
+  padding: 5px;
+  outline: none;
+}
+input:focus{
+  border-bottom: 1px solid black;
+}
+.button{
+  margin-top: 10px;
+  border: none;
+  background-color: black;
+  color: whitesmoke;
+  height: 30px;
+  border-radius: 5px;
+}
+.rp-button{
+  margin-top: 10px;
+  border: none;
+  background-color: black;
+  color: whitesmoke;
+  height: 30px;
+  border-radius: 5px;
+}
+.selectContent{
+  width: 50%;
+}

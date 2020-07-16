@@ -1,0 +1,40 @@
+extends ../layout
+block script
+        script(src="/javascripts/studentValidate.js" defer)
+        link(rel='stylesheet', href='/stylesheets/studentValidate.css')
+block content
+        h1= title
+        form(method='POST', action=student.url+'/update')
+                label(for="studentId") Student id:
+                input(type="number", name="studentId", value=student.studentId)
+                br
+                label(for="fname") First name:
+                input(type="text", name='fname', value=student.firstName)
+                br
+                label(for="lname") Last name:
+                input(type="text", name='lname', value=student.lastName)
+                br
+                label(for="addres") Address:
+                input(type="text", name='address', value=student.address)
+                br
+                label(for="dob") Date of birth:
+                input(type="date", name='dob', value=student.dob)
+                br
+                button(id='create', class='button', type='submit') Update student
+        //- form(method='POST', action=student.url+'/update')
+        //-         label(for="studentId") Student id:
+        //-         input(type="number", name="studentId", value=student.studentId)
+        //-         br
+        //-         label(for='fname') First name:
+        //-         input(type="text", name='fname', value=student.firstName)
+        //-         br
+        //-         label(for='lname') Last name:
+        //-         input(type="text", name='lname', value=student.lastName)
+        //-         br
+        //-         label(for='address') Address:
+        //-         input(type="text", name='address', value=student.address)
+        //-         br
+        //-         label(for='dob') Date of birth:
+        //-         input(type="date", name='dob', value=student.dob)
+        //-         br
+        //-         button(id='submit', type='submit', disable)= title

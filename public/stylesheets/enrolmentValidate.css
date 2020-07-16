@@ -1,0 +1,27 @@
+.studenterror::after{
+        content: 'must contain 10 digits';
+        color: red;
+        font-size: 12px;
+        font-weight: bold;
+}
+.courseerror::after{
+        content: 'must have length of 3';
+        color: red;
+        font-size: 12px;
+        font-weight: bold;
+}
+.semestererror::after{
+        content: 'must be 1-8';
+        color: red;
+        font-size: 12px;
+        font-weight: bold;
+}
+.gradeerror::after{
+        content: "must be ['g', 'p', 'f', 'e']";
+        color: red;
+        font-size: 12px;
+        font-weight: bold;
+}
+label{
+        font-weight: bold;
+}
